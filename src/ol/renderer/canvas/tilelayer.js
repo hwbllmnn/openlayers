@@ -197,7 +197,7 @@ ol.renderer.canvas.TileLayer.prototype.forEachLayerAtPixel = function(
   this.composeFrame(frameState, this.getLayer().getLayerState(), this.context);
 
   var imageData = this.context.getImageData(
-      pixel[0], pixel[1], 1, 1).data;
+      pixel[0] * pixelRatio, pixel[1] * pixelRatio, 1, 1).data;
 
   if (imageData[3] > 0) {
     return callback.call(thisArg, this.getLayer(),  imageData);
